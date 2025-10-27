@@ -1,0 +1,139 @@
+/* Reset and basic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Calculator container */
+.calculator {
+  background: #2d2d2d;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 320px;
+}
+
+/* Display screen */
+.display {
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: right;
+  margin-bottom: 20px;
+  min-height: 70px;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+
+/* Buttons grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Button styling */
+button {
+  background: #4a4a4a;
+  color: #fff;
+  border: none;
+  padding: 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #5a5a5a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Number buttons */
+button[data-action="number"] {
+  background: #505050;
+}
+
+button[data-action="number"]:hover {
+  background: #606060;
+}
+
+/* Operator buttons */
+button[data-action="operator"] {
+  background: #ff9500;
+}
+
+button[data-action="operator"]:hover {
+  background: #ffaa33;
+}
+
+/* Equals button */
+button[data-action="equals"] {
+  background: #34c759;
+}
+
+button[data-action="equals"]:hover {
+  background: #4cd964;
+}
+
+/* Clear button */
+button[data-action="clear"] {
+  background: #ff3b30;
+  grid-column: span 2; /* Makes it wider */
+}
+
+button[data-action="clear"]:hover {
+  background: #ff5247;
+}
+
+/* Delete button */
+button[data-action="delete"] {
+  background: #ff6b6b;
+}
+
+button[data-action="delete"]:hover {
+  background: #ff8787;
+}
+
+/* Empty buttons (if you kept them) */
+button:empty {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 400px) {
+  .calculator {
+    width: 90%;
+    padding: 15px;
+  }
+  
+  .display {
+    font-size: 2rem;
+    padding: 15px;
+  }
+  
+  button {
+    padding: 15px;
+    font-size: 1rem;
+  }
+}
